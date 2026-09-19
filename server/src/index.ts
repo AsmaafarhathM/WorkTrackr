@@ -1,5 +1,5 @@
 import http from 'http';
-import express from 'express';
+import express, { Request, Response } from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
@@ -33,7 +33,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // Health Check
-app.get('/health', (_req, res) => {
+app.get('/health', (_req: Request, res: Response) => {
   res.status(200).json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
