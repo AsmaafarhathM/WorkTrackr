@@ -14,7 +14,9 @@ export const initSocketServer = (httpServer: HttpServer): Server => {
 
   io = new Server(httpServer, {
     cors: {
-      origin: [clientUrl, 'http://localhost:5173', 'http://127.0.0.1:5173'],
+      origin: (origin, callback) => {
+        callback(null, origin || true);
+      },
       credentials: true,
       methods: ['GET', 'POST'],
     },
