@@ -1,0 +1,15 @@
+{
+  "name": "worktrackr-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "WorkTrackr - Real-Time Client Project Dashboard root workspace helper",
+  "scripts": {
+    "install": "npm --prefix server install && npm --prefix client install",
+    "install:all": "npm --prefix server install && npm --prefix client install",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "prisma:push": "npm --prefix server run prisma:push",
+    "prisma:seed": "npm --prefix server run prisma:seed",
+    "test:flows": "npm --prefix server run test:flows"
+  }
+}
